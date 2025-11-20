@@ -1,0 +1,22 @@
+---
+// No layout. This is a clean login page.
+import "../styles/global.css";
+import LoginForm from "../components/auth/LoginForm.tsx";
+---
+
+<html lang="en">
+  <body class="min-h-screen flex items-center justify-center bg-gray-100">
+
+    <script>
+      // If already logged in → go dashboard
+      if (localStorage.getItem("token")) {
+        window.location.href = "/dashboard";
+      }
+    </script>
+
+    <div class="w-full max-w-md bg-white p-6 rounded shadow">
+      <LoginForm client:load />
+    </div>
+
+  </body>
+</html>
